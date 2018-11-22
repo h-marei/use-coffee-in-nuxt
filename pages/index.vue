@@ -10,11 +10,11 @@
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          :href="getLink('nuxtjs')"
           target="_blank"
           class="button--green">Documentation</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          :href="getLink('github')"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
@@ -24,9 +24,11 @@
 
 <script lang="coffee">
 import AppLogo from '~/components/AppLogo.vue'
+import LinksMixin from '~/components/LinksMixin.coffee'
 
 export default
   name: 'index'
+  mixins: [ LinksMixin ]
   data: ->
     textNuxt: 'Nuxt.js'
     textCoffee: 'CoffeeScript'
