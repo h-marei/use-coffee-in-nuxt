@@ -6,7 +6,7 @@
         use-coffee-in-nuxt
       </h1>
       <h2 class="subtitle">
-        {{ textNuxt }} + {{ exclamationMarkText(textCoffee) }}
+        {{ $store.state.texts['nuxt'] }} + {{ $store.getters.exclamationMarkText('coffee') }}
       </h2>
       <div class="links">
         <a
@@ -29,11 +29,6 @@ import LinksMixin from '~/components/LinksMixin.coffee'
 export default
   name: 'index'
   mixins: [ LinksMixin ]
-  data: ->
-    textNuxt: 'Nuxt.js'
-    textCoffee: 'CoffeeScript'
-  methods:
-    exclamationMarkText:(text) -> text + '!!'
   components:
     'app-logo': AppLogo
 </script>
